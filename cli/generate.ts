@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 
 const WIDTH = 50;
-const WEBSITE_URL = "https://website-zeta-livid-18.vercel.app";
+const WEBSITE_URL = "https://freeutka.is-a.dev";
 const GITUHB_URL = "https://github.com/freeutka";
 const DISCORD_URL = "https://discord.gg/qK9pfnB3Yv";
 const EMAIL_MAILTO = atob("bWFpbHRvOm1pY2hhZWxAcmlza3ltaC5kZXY");

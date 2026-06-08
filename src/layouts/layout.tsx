@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ title = siteTitle, canonical = "/", chi
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width" />
       <link rel="icon" type="image/svg+xml" href="/fire_flat.svg" />
-      <link rel="canonical" href={`https://website-zeta-livid-18.vercel.app${canonical}`} />
+      <link rel="canonical" href={`https://freeutka.is-a.dev${canonical}`} />
       <meta name="generator" content="freeutka React layout" />
       <title>{title}</title>
       <meta name="description" content="Just a random person on the internet" />
@@ -47,6 +47,9 @@ const Layout: React.FC<LayoutProps> = ({ title = siteTitle, canonical = "/", chi
     </head>
     <body className="font-sans">
       {children}
+      <div className="fixed bottom-2 right-4 text-xs text-text-secondary/60 hover:text-[#FF6723] transition">
+        <a href="https://github.com/RiskyMH/Website" title="This site was forked from another developer" className="underline hover:no-underline">forked from RiskyMH</a>
+      </div>
       {process.env.EXTRA_SCRIPTS && <div dangerouslySetInnerHTML={{ __html: process.env.EXTRA_SCRIPTS }} />}
     </body>
   </html>

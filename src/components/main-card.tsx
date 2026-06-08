@@ -111,7 +111,7 @@ export const MainCard: React.FC = () => (
           <li key="dropdown-separator" className="py-1"><hr className="border-dropdown-hover border-t" /></li>
           <DropdownLink
             key="dropdown-website"
-            url="https://website-zeta-livid-18.vercel.app"
+            url="https://freeutka.is-a.dev"
             text="This Website"
             Icon={GlobeIcon}
           />
