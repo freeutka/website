@@ -1,17 +1,11 @@
 import React from "react";
 import DiscordIcon from "./icons/discord-icon.svg";
-import ExternalIcon from "./icons/external-icon.svg";
 import GitHubIcon from "./icons/github-icon.svg";
 import SocialDropdown, { DropdownLink } from "./social-dropdown";
 import LinkButton from "./link-button";
 import MailIcon from "./icons/mail-icon.svg";
-import YouTubeIcon from "./icons/youtube-icon.svg";
-import TwitterIcon from "./icons/twitter-icon.svg";
-import RedditIcon from "./icons/reddit-icon.svg";
-import BlueskyIcon from "./icons/bluesky-icon.svg";
 import GlobeIcon from "./icons/globe-icon.svg";
 import NpmIcon from "./icons/npm-icon.svg";
-import WikipediaIcon from "./icons/wikipedia-icon.svg";
 import { minify } from "../tools/minify.macro" with { type: "macro" };
 
 export const MainCard: React.FC = () => (
