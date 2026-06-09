@@ -3,8 +3,8 @@
 const WIDTH = 50;
 const WEBSITE_URL = "https://freeutka.is-a.dev";
 const GITUHB_URL = "https://github.com/freeutka";
-const DISCORD_URL = "https://discord.gg/qK9pfnB3Yv";
-const EMAIL_MAILTO = atob("bWFpbHRvOm1pY2hhZWxAcmlza3ltaC5kZXY");
+const DISCORD_URL = "https://discord.gg/2xw8hApK";
+const EMAIL_MAILTO = atob("bWFpbHRvOmZyZWV1dGthQHByb3Rvbi5tZQ==");
 
 const gray = (str: string) => `\x1b[38;2;107;114;128m${str}\x1b[0m`;
 const lightGray = (str: string) => `\x1b[38;2;156;163;175m${str}\x1b[0m`;
