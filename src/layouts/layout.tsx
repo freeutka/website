@@ -8,6 +8,7 @@ export type LayoutProps = {
 };
 
 const siteTitle = "freeutka";
+const commit = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? "dev";
 
 const Layout: React.FC<LayoutProps> = ({ title = siteTitle, canonical = "/", children }) => (
   <html lang="en">
@@ -44,6 +45,9 @@ const Layout: React.FC<LayoutProps> = ({ title = siteTitle, canonical = "/", chi
       />
       <style id="tailwind-styles">/*tailwind*/</style>
     </head>
+    <div className="fixed bottom-2 right-4 text-xs text-text-secondary/60 hover:cursor-default">
+      <a title="Commit">{commit}</a>
+    </div>
     <body className="font-sans antialiased">
       {children}
       {process.env.EXTRA_SCRIPTS && <div dangerouslySetInnerHTML={{ __html: process.env.EXTRA_SCRIPTS }} />}

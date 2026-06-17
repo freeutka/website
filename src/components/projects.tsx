@@ -5,7 +5,7 @@ import projectsData from "../data/projects.json";
 
 export default function Projects() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-6">
       {projectsData.map((group) => (
         <section key={group.title}>
           <h3 className="group-label">{group.title}</h3>
