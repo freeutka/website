@@ -7,11 +7,11 @@ import MainCard from "../components/main-card";
 const Index = () => (
   <Layout canonical="/">
     <div id="main" className="mx-auto w-full max-w-2xl px-4 text-text">
-      <section className="flex min-h-dvh flex-col items-center justify-center py-16">
+      <section className="flex min-h-dvh flex-col items-center justify-center py-16 snap-start">
         <MainCard />
       </section>
 
-      <section id="projects-section" className="pb-24 pt-4">
+      <section id="projects-section" className="flex min-h-dvh flex-col justify-center pb-24 pt-4 snap-start">
         <header className="mb-8 border-b border-border pb-6">
           <h2 className="section-title">Projects</h2>
           <p className="section-subtitle mt-1">Things I&apos;ve worked on</p>

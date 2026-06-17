@@ -1,23 +1,4 @@
 import React from "react";
-import { minify } from "../tools/minify.macro";
-
-const scrollHintScript = minify(/* js */`
-  window.addEventListener("DOMContentLoaded", function () {
-    var hint = document.getElementById("scroll-hint");
-    var target = document.getElementById("projects-section");
-    if (!hint || !target) return;
-
-    function onScroll() {
-      var rect = target.getBoundingClientRect();
-      var show = rect.top > window.innerHeight * 0.6;
-      hint.style.opacity = show ? "1" : "0";
-      hint.style.pointerEvents = show ? "auto" : "none";
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  });
-`);
 
 const ScrollHint = () => (
   <>
@@ -44,7 +25,6 @@ const ScrollHint = () => (
         />
       </svg>
     </button>
-    <script dangerouslySetInnerHTML={{ __html: scrollHintScript }} />
   </>
 );
 

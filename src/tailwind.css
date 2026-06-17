@@ -79,3 +79,8 @@ body {
 ::selection {
     background-color: #ffffff18;
 }
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
