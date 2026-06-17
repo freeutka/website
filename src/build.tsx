@@ -28,7 +28,9 @@ pages.forEach(async ({ component, filename }) => {
         `<style id="tailwind-styles">${css}</style>`
     ).replace("_onclick=", "onclick=")
     .replaceAll("<!-- -->", "");
-    fs.writeFileSync(path.join(outputDir, filename), fullHtml, 'utf8');
+    const outPath = path.join(outputDir, filename);
+    fs.mkdirSync(path.dirname(outPath), { recursive: true });
+    fs.writeFileSync(outPath, fullHtml, 'utf8');
     console.log(`Built ${filename}`);
 });
 

@@ -1,6 +1,8 @@
 import path from 'path';
 import { watch } from 'fs';
 
+const root = path.resolve(__dirname, '..');
+
 console.log('Watching for changes...');
 const lastSpawnSignal = new AbortController();
 watch(path.resolve(__dirname), { recursive: true }, async (eventType, filename) => {
@@ -9,7 +11,7 @@ watch(path.resolve(__dirname), { recursive: true }, async (eventType, filename) 
 
     // lastSpawnSignal.abort();
     const b = Bun.spawn(['bun', 'run', 'build', '--no-tailwind'],
-        { cwd: __dirname, stdout: 'inherit', stderr: 'inherit', signal: lastSpawnSignal.signal }
+        { cwd: root, stdout: 'inherit', stderr: 'inherit', signal: lastSpawnSignal.signal }
     );
     if (b.exitCode !== 0 && b.signalCode !== null) {
         console.error('Build failed.');
@@ -18,7 +20,7 @@ watch(path.resolve(__dirname), { recursive: true }, async (eventType, filename) 
     console.log('Rebuild complete. Watching for changes...');
 });
 
-Bun.spawn(['bun', 'run', 'build'], { cwd: __dirname, stdout: 'inherit', stderr: 'inherit', signal: lastSpawnSignal.signal });
+Bun.spawn(['bun', 'run', 'build'], { cwd: root, stdout: 'inherit', stderr: 'inherit', signal: lastSpawnSignal.signal });
 
 Bun.spawn(
     [

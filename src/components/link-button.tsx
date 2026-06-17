@@ -14,34 +14,52 @@ interface LinkButtonProps {
   hidden?: boolean;
 }
 
-export default function LinkButton({ url = "", text, Icon, newTab = false, noMobile = false, disabled = false, small = false, primary = false, obfuscate = false, itemProp, hidden = false }: LinkButtonProps) {
+export default function LinkButton({
+  url = "",
+  text,
+  Icon,
+  newTab = false,
+  disabled = false,
+  small = false,
+  primary = false,
+  obfuscate = false,
+  itemProp,
+  hidden = false,
+}: LinkButtonProps) {
   function encodeObfuscated(str: string): string {
     return btoa(unescape(encodeURIComponent(str))).split("").reverse().join("");
   }
 
+  const baseClass = primary ? "btn" : "btn-icon";
+  const sizeClass = primary
+    ? small
+      ? "h-8 px-3 text-xs"
+      : "h-9 px-3.5 text-sm"
+    : small
+      ? "h-8 w-8 max-w-8 p-0"
+      : "h-9 w-full p-0 sm:w-9 sm:max-w-9";
+
   return (
-    <li>
+    <li className={hidden ? "hidden" : undefined}>
       <a
-        href={obfuscate ? (typeof obfuscate === "string" ? obfuscate : "#") : (url === "" ? "#" : url)}
+        href={obfuscate ? (typeof obfuscate === "string" ? obfuscate : "#") : url || "#"}
         target={newTab ? "_blank" : "_self"}
         rel="noopener noreferrer"
         itemProp={itemProp}
-        title={disabled ? typeof disabled === "string" ? disabled : text : text}
+        title={disabled ? (typeof disabled === "string" ? disabled : text) : text}
         className={
-          "rounded-lg bg-button shadow-sm flex items-center justify-center gap-1 text-text " +
-          (primary
-            ? (small ? "px-3 py-1 text-xs min-w-14 h-8" : "p-1.5 text-sm h-8 min-w-21")
-            : (small ? "w-12 h-8 max-w-12" : "w-full md:w-20 h-9 md:max-w-20")) + " " +
-          (disabled ? "opacity-25 cursor-default" : "hover:bg-button-hover") + " " +
-          "focus:outline-none focus-visible:ring-2 focus-visible:ring-focus transition-shadow duration-100" + " " +
-          (hidden ? "hidden" : "")
+          baseClass +
+          " " +
+          sizeClass +
+          " " +
+          (disabled ? "cursor-default opacity-30 hover:bg-button hover:border-border" : "")
         }
         aria-disabled={!!disabled}
         tabIndex={disabled ? -1 : 0}
         data-obfuscated={obfuscate ? encodeObfuscated(url) : undefined}
       >
-        <Icon className="w-4 h-4" height={16} width={16} />
-        {primary ? <span className="ml-1 inline"> {text}</span> : <span className="sr-only"> {text}</span>}
+        <Icon className="h-4 w-4 shrink-0" height={16} width={16} />
+        {primary ? <span>{text}</span> : <span className="sr-only">{text}</span>}
       </a>
     </li>
   );
