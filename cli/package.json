@@ -2,7 +2,7 @@
     "name": "freeutka",
     "description": "Just a random backend developer",
     "homepage": "https://freeutka.xyz",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "freeutka",
     "bin": {
         "freeutka": "./cli.js"
