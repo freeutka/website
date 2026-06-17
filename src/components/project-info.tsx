@@ -5,10 +5,10 @@ import GitHubIcon from "./icons/github-icon.svg";
 import LinkButton from "./link-button";
 
 const linkConfig = {
-  website: { text: "website", Icon: GlobeIcon },
-  discord: { text: "discord", Icon: DiscordIcon },
-  "discord-bot-invite": { text: "invite", Icon: DiscordIcon },
-  github: { text: "github", Icon: GitHubIcon },
+  website: { text: "Website", Icon: GlobeIcon },
+  discord: { text: "Discord", Icon: DiscordIcon },
+  "discord-bot-invite": { text: "Invite", Icon: DiscordIcon },
+  github: { text: "GitHub", Icon: GitHubIcon },
 };
 
 export default function ProjectInfo({
