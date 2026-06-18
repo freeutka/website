@@ -46,7 +46,7 @@ curl freeutka.xyz
 npx freeutka
 ```
 
-### Cloudflare + Vercel setup
+## Cloudflare + Vercel setup
 
 If you are hosting your site on **Vercel** behind **Cloudflare**, note that Vercel automatically redirects all HTTP requests to HTTPS. This breaks terminal usage such as:
 
