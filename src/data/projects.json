@@ -21,20 +21,20 @@
         "projects": [
             {
                 "name": "Xactyl",
-                "icon": "/xactyl.png",
+                "icon": "/xactyl.svg",
                 "links": [
                     {
-                        "url": "https://github.com/freeutka/Xactyl",
-                        "type": "github",
+                        "url": "https://xactyl.freeutka.xyz",
+                        "type": "website",
                         "primary": true
+                    },
+                    {
+                        "url": "https://github.com/freeutka/Xactyl",
+                        "type": "github"
                     },
                     {
                         "type": "discord-bot-invite",
                         "url": "https://discord.gg/6fcpK85yYu"
-                    },
-                    {
-                        "url": "https://freeutka.github.io/Xactyl-docs/",
-                        "type": "website"
                     }
                 ],
                 "description": "Xactyl is customized fork of Pterodactyl"
